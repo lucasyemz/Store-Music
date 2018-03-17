@@ -1,0 +1,284 @@
+*{
+    margin: 0;
+    padding: 0;
+     box-sizing: border-box;
+    
+}
+a{
+      text-decoration: none;
+       cursor: pointer;
+}
+.top{
+height: 100%;
+    width: 260px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+.top a {
+    text-decoration: none;
+    font-size: 25px;
+
+    display: block;
+}
+.top a:hover {
+}
+
+.logo{
+    position: relative;
+    display: block;
+  -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 58px;
+    width: 100%;
+    background-image: url('../logos/StickyS2.png');
+    background-repeat: no-repeat;
+    background-size:contain contain;
+    background-position: center;
+    margin-top: 10px;
+}
+
+img{
+    user-select: none;
+}
+
+
+.list{
+  list-style-type: none;
+    margin-top: 10px;
+    font-family: Verdana, sans-serif;
+    font-weight:bold;
+    font-size:1vw;
+}
+
+.list a{
+    color: white;
+    text-decoration: none;}
+.list li{
+   
+    padding: 15px 20px;
+    background-color: #111;
+    transition: background-color 0.6s;
+}
+.list li:hover,.list li:active{
+    background-color: #262626;
+}
+#search{
+background:url('../icons/search.png') center right no-repeat;
+background-color:#d6d6d6;
+background-size: 13px;
+background-position:95%;     
+
+}
+#search:focus{
+    background-color:#ffffff ;
+}
+
+.flexbox { display: flex;  }
+.flexbox .stretch { flex: 1; }
+.flexbox .normal { flex: 0; margin: 0 0 0 1rem; }
+.flexbox div input { display: block; padding: .3em 1em; margin: auto;  width: 80%;;  border: 1px #2c2c54; font-size:13px; border-radius: 6px; transition: background 0.7s; }
+.flexbox div input:focus { padding: .3em 1em; width: 80%;  background: white; border: 1px #2c2c54; color: black; font-size:13px;}
+
+.body {
+   
+    margin-left: 260px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+ #img_div {
+     display: block;
+     float: left;
+     width: 190px;
+     height: 270px;
+     text-align: center;
+     margin: 10px;
+     border-radius: 10px;
+    font-weight:bold; 
+     font-size: 14px;
+      box-shadow: 1px 4px 5px gray;
+     transition: box-shadow 0.5s;
+     
+}
+ #img_div2 {
+     position: relative;
+     display: block;
+     width:100%;
+     height:auto;
+     padding:1px;
+     text-align: left;
+     border-radius: 10px;
+     font-weight:bold;
+     box-shadow: 1px 4px 5px gray;
+     transition: box-shadow 0.5s;
+     
+     
+}
+#img_div:hover{
+    box-shadow: 1px 4px 20px gray;
+}
+
+ #img_div img{
+     margin: 10px;
+     width: 190px;
+     height: 190px;
+     margin-left: -0.5px;
+     margin-top: -5px;
+     border-top-left-radius: 10%;
+     border-top-right-radius: 10%;
+}
+ #img_div2 img{
+     float: left;
+     margin: 10px;
+     width: 150px;
+     height: 150px;
+     border-radius: 10%;
+}
+#img_div .icons{
+    margin:19px 8px;;
+     
+     height: 25px;
+     width: 25px;
+}
+ .icons{
+    margin:19px 8px;;
+     height: 25px;
+     width: 25px;
+     border: none;
+     background-color: none;
+     cursor: pointer;
+}
+
+#img_div button{
+    background: none;
+    border: none;
+}
+
+#img_div input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+
+#img_div2 button[type=submit] {
+    background-color: #111;/* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    float: right;
+    border-radius: 7px;
+}
+.button-save{
+        background-color: #111;/* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    float: right;
+    border-radius: 7px;
+}
+#img_div2 input[type=text], select, textarea {
+    position: relative;
+    display: grid;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+.textBand{
+        position: relative;
+    display: grid;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    
+}
+
+#img_div2 input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+.albumname{
+    position: relative;
+    float: left;
+    margin: 70px -7px;
+    
+}
+.album{
+    position: absolute;
+    margin: 100px 400px;
+    
+}
+.musics{
+    height: 20px;
+    width: 50%;
+    margin: 100px;
+}
+.musics input[type=text]{
+        position: relative;
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+.musics button{
+            background-color: #111;/* Black */
+    border: none;
+    color: white;
+    padding: 12px 30px;;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 10px;
+    cursor: pointer;
+    float: right;
+    border-radius: 7px;
+}
+#musics {
+    border-collapse: collapse;
+    width: 100%;
+   
+}
+
+#musics td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#musics tr{background-color: #f2f2f2;text-align: center;}
+
+
+
+#musics th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #111;
+    color: white;
+}
