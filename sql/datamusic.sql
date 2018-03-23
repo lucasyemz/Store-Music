@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 17-Mar-2018 às 04:22
+-- Generation Time: 23-Mar-2018 às 02:33
 -- Versão do servidor: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -35,6 +35,7 @@ CREATE TABLE `albums` (
   `Year` varchar(45) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
   `Data` varchar(45) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
   `Image` varchar(45) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
+  `Genrers` varchar(25) NOT NULL,
   `albumId` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -42,13 +43,13 @@ CREATE TABLE `albums` (
 -- Extraindo dados da tabela `albums`
 --
 
-INSERT INTO `albums` (`idAlbums`, `Album`, `Publisher`, `Year`, `Data`, `Image`, `albumId`) VALUES
-(1, 'Blurryface', 'Fueled by Ramen', '2015', '16/03/2018', 'blurryface-W320.jpg', 10),
-(2, 'Vessel', 'Fueled by Ramen', '2013', '16/03/2018', 'vessel21p.jpg', 10),
-(3, 'Evolve', 'Interscope Records', '2017', '16/03/2018', 'imgd.jpg', 12),
-(4, 'All Hope Is Gone', 'Roadrunner Records', '2008', '16/03/2018', 'SlipknotAllHopeIsGoneCapa.jpg', 1),
-(5, 'Toxicity', 'American Recordings', '2001', '16/03/2018', 'toxicity.jpg', 13),
-(7, 'One More Light', 'Warner Bros. Records', '2017', '17/03/2018', '1more.jpeg', 14);
+INSERT INTO `albums` (`idAlbums`, `Album`, `Publisher`, `Year`, `Data`, `Image`, `Genrers`, `albumId`) VALUES
+(1, 'Blurryface', 'Fueled by Ramen', '2015', '23/03/2018', 'blurryface-W320.jpg', 'Hip Hop/Rap', 10),
+(2, 'Vessel', 'Fueled by Ramen', '2013', '23/03/2018', 'vessel21p.jpg', 'Hip Hop/Rap', 10),
+(3, 'Evolve', 'Interscope Records', '2017', '23/03/2018', 'imgd.jpg', 'Rock', 12),
+(4, 'All Hope Is Gone', 'Roadrunner Records', '2008', '23/03/2018', 'SlipknotAllHopeIsGoneCapa.jpg', 'Rock', 1),
+(5, 'Toxicity', 'American Recordings', '2001', '23/03/2018', 'toxicity.jpg', 'Rock', 13),
+(7, 'One More Light', 'Warner Bros. Records', '2017', '23/03/2018', '1more.jpeg', 'Rock', 14);
 
 -- --------------------------------------------------------
 

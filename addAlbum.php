@@ -16,12 +16,13 @@ if (isset($_GET['id'])) {
         $Album     = mysqli_real_escape_string($db, $_POST['Album']);
         $Publisher = mysqli_real_escape_string($db, $_POST['Publisher']);
         $Year      = mysqli_real_escape_string($db, $_POST['Year']);
+        $Genrer      = mysqli_real_escape_string($db, $_POST['Genrer']);
         $Data      = mysqli_real_escape_string($db, $_POST['Data']);
         
         // image file directory
         $target = "img/" . basename($image);
         
-        $sql = "INSERT INTO albums VALUES ('null','$Album','$Publisher','$Year','$Data','$image','$id')";
+        $sql = "INSERT INTO albums VALUES ('null','$Album','$Publisher','$Year','$Data','$image','$Genrer','$id')";
         mysqli_query($db, $sql);
         
         
@@ -73,10 +74,12 @@ if (isset($_GET['id'])) {
         echo "<div id='img_div'>";
         echo "<img src='img/" . $row['Image'] . "' >";
         echo "<p>" . $row['Band'] . "</p>";
+        echo "</div>";
         
     }
     
 ?>
+                    <div id="img_div2">
                <form method="POST" action="addAlbum.php?id=<?php
     echo $id;
 ?>" enctype="multipart/form-data">
@@ -100,6 +103,32 @@ if (isset($_GET['id'])) {
                         <div>Ano de Lançamento:
                             <input type="text" name="Year" required>
                         </div>
+                          <div>Gênero:
+                            <select name="Genrer" required>
+                               <option value=" Alternative Music"> Alternative Music</option>
+                             <option value="Blues">Blues</option>
+                            <option value="Classical Music">Classical Music</option>
+                              <option value="Country Music">Country Music</option>
+                                <option value="Dance Music">Dance Music</option>
+                                <option value="Easy Listening">Easy Listening</option>
+                                 <option value="Eletronic Music">Eletronic Music</option>
+                                <option value="Folk/Pop">Folk/Pop</option>
+                                 <option value="Hip Hop/Rap">Hip Hop/Rap</option>
+                                 <option value="Indie Pop">Indie Pop</option>
+                               <option value="Inspirational">Inspirational</option>
+                                 <option value="Asia Pop">Asian Pop</option>
+                                  <option value="Jazz">Jazz</option>
+                                 <option value="Latin Music">Latin Music</option>
+                                 <option value="New Age">New Age</option>
+                                 <option value="Opera">Opera</option>
+                               <option value="Pop">Pop</option>
+                                <option value="R&B/Soul">R&B/Soul</option>
+                                <option value="Reggae">Reggae</option>
+                                  <option value="Rock">Rock</option>
+                                 <option value="Singer/Song Writer">Singer/Song Writer</option>
+                               <option value="World Music">World Music</option>
+                            </select>
+                        </div>
                         <div>Data de Hoje:
                             <input type="text" name="Data" value="<?php
     echo date('d/m/Y');
@@ -112,7 +141,7 @@ if (isset($_GET['id'])) {
 }
 ?>
                </form>
-             
+                 </div>
             </div>
         
     </body>

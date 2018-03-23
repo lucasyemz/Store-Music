@@ -3,6 +3,8 @@
 $db = mysqli_connect("localhost", "root", "", "datamusic");
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
+     session_start();
+      $_SESSION['idAlbum'] = $id;
 
     // Initialize message variable
     $msg = "";
@@ -16,13 +18,13 @@ if (isset($_GET['id'])) {
         $Album     = mysqli_real_escape_string($db, $_POST['Album']);
         $Publisher = mysqli_real_escape_string($db, $_POST['Publisher']);
         $Year      = mysqli_real_escape_string($db, $_POST['Year']);
+        $Genrer   = mysqli_real_escape_string($db, $_POST['Genrer']);
         $Data      = mysqli_real_escape_string($db, $_POST['Data']);
-        $Music     = mysqli_real_escape_string($db, $_POST['Music']);
 
         // image file directory
         $target = "img/" . basename($image);
 
-        $sql = "UPDATE albums SET Album = '$Album', Publisher = '$Publisher',Musics = '$Music', Year = '$Year',Data = '$Data',Image = '$image' WHERE idAlbums='$id';";
+        $sql = "UPDATE albums SET Album = '$Album', Publisher = '$Publisher', Year = '$Year',Data = '$Data',Image = '$image',Genrers = '$Genrer' WHERE idAlbums='$id';";
         mysqli_query($db, $sql);
 
         if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
@@ -71,6 +73,7 @@ if (isset($_GET['id'])) {
     $Album;
     $Publisher;
     $Year;
+    $Genrer;
     while ($row = mysqli_fetch_array($result)) {
         echo "<div id='img_div2'>";
         echo "<img src='img/" . $row['Image'] . "' >";
@@ -79,6 +82,7 @@ if (isset($_GET['id'])) {
         $Album     = $row['Album'];
         $Publisher = $row['Publisher'];
         $Year      = $row['Year'];
+        $Genrer    = $row['Genrers'];
 
     }
 
@@ -111,6 +115,33 @@ if (isset($_GET['id'])) {
                             <input type="text" name="Year" value="<?php
     echo $Year;
 ?>" required>
+                        </div>
+                        <div>Gênero:
+                            <select name="Genrer"  required>
+                              <option value="<?php echo $Genrer;?>" selected><?php echo $Genrer;?></option>
+                               <option value=" Alternative Music"> Alternative Music</option>
+                             <option value="Blues">Blues</option>
+                            <option value="Classical Music">Classical Music</option>
+                              <option value="Country Music">Country Music</option>
+                                <option value="Dance Music">Dance Music</option>
+                                <option value="Easy Listening">Easy Listening</option>
+                                 <option value="Eletronic Music">Eletronic Music</option>
+                                <option value="Folk/Pop">Folk/Pop</option>
+                                 <option value="Hip Hop/Rap">Hip Hop/Rap</option>
+                                 <option value="Indie Pop">Indie Pop</option>
+                               <option value="Inspirational">Inspirational</option>
+                                 <option value="Asia Pop">Asian Pop</option>
+                                  <option value="Jazz">Jazz</option>
+                                 <option value="Latin Music">Latin Music</option>
+                                 <option value="New Age">New Age</option>
+                                 <option value="Opera">Opera</option>
+                               <option value="Pop">Pop</option>
+                                <option value="R&B/Soul">R&B/Soul</option>
+                                <option value="Reggae">Reggae</option>
+                                  <option value="Rock">Rock</option>
+                                 <option value="Singer/Song Writer">Singer/Song Writer</option>
+                               <option value="World Music">World Music</option>
+                            </select>
                         </div>
                         <div>Data de Hoje:
                             <input type="text" name="Data" value="<?php
@@ -148,6 +179,7 @@ if (isset($_GET['id'])) {
                     $pMusic = "SELECT * FROM musics WHERE albumId='$id'";
                      $resultMusic = mysqli_query($db,$pMusic);
                       while($row = mysqli_fetch_array($resultMusic)){
+
                           echo  "<tr>";
                             echo    "<td>".$row['idMusic']."</td>";
                             echo    "<td>".$row['Music']."</td>";

@@ -65,7 +65,7 @@
             <div class="body" id="result">
                  
             
-                
+                <div id="img_div2">
           <form method="POST" action="addAuthors.php" enctype="multipart/form-data">
                     <input type="hidden" name="size" value="1000000">
                     <div>
@@ -83,7 +83,7 @@
                         <button type="submit" name="upload" class="button-save">Salvar</button>
                     
                 </form>
-              
+              </div>
         </div>
     </body>
 

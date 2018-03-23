@@ -20,6 +20,7 @@ else
  ";
 }
 $result = mysqli_query($connect, $query);
+
 if(mysqli_num_rows($result) > 0){
 
    
@@ -28,6 +29,7 @@ if(mysqli_num_rows($result) > 0){
  echo "<div id='img_div'>";
     echo "<img src='img/" . $row['Image'] . "' >";
    if(isset($row['Album']) && $row['Album'] == true) {  echo "<p style='font-size:10px'>" .$row['Album'] . "</p>"; }
+   if(isset($row['Music']) && $row['Music'] == true) {  echo "<p style='font-size:10px'>" .$row['Music'] . "</p>"; }     
     echo "<p style='font-size:10px'>" . $row['Band'] . "</p>";
     
     
